@@ -1,0 +1,11 @@
+<%= render 'header' %>
+
+<h1>Add some Post!</h1>
+
+<ol class="errors">
+  <% @post.errors.full_messages.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ol>
+
+<%= render 'form' %>

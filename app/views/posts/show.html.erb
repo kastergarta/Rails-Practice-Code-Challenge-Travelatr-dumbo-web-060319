@@ -1,0 +1,12 @@
+# show individual post
+<%= render 'header' %>
+
+<h1> <%= @post.title%>:</h1>
+
+<p><% @post.content %></p>
+
+<p>People liked this post: <%= @post.likes %></p>
+
+<% button_to 'Like it!', like_path %>
+<%= link_to "Author: #{@post.blogger.name}", blogger_path(@post.blogger_id) %><br>
+<%= link_to "Read more about #{@post.destination.name}", destination_path(@post.destination_id) %><br>

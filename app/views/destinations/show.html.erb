@@ -1,0 +1,16 @@
+
+<%= render 'header' %>
+
+<h1> <%= "#{@destination.name}, #{@destination.country}" %> </h1>
+
+<p><%= "Recent posts about #{@destination.name}:" %></p>
+
+<ul>
+  <% @destination.most_recent.each do |post| %>
+  <li> <%= link_to post.title, post_path(post) %></li>
+  <%end %>
+</ul>
+
+<p><%= "Bloggers covering this destination are #{@destination.bloggers_average_age} years old on average" %></p>
+
+<%= link_to "Check out this post: #{@destination.featured_post.title}", post_path(@destination.featured_post) %>

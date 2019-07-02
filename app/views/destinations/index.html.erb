@@ -1,0 +1,14 @@
+<%= render 'header' %>
+
+<h1>All Destinations:</h1>
+
+  <% @destinations.each do |destination| %>
+    <ul>
+      <li>
+          <%= destination.name %>
+      </li>
+    </ul>
+  <% end %>
+
+
+<%= link_to "Find a destination!", new_destination_path %>
